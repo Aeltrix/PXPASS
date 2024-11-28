@@ -60,14 +60,14 @@ def main():
     print ( lm )
     
     
-    if choice == "1" :
+    if choice == "1":
         message = input("Enter text to encrypt it : ")
         encoded_message = encode_base64(message)  
         pp =  " \033[1;33m "
         print ( pp )
         print(f"Text encryption : [{encoded_message}]")
     
-    elif choice == "2" :
+    elif choice == "2":
         encoded_message = input("Enter the ciphertext : ")
         decoded_message = decode_base64(encoded_message)  
         
