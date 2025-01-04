@@ -26,4 +26,4 @@ _____________________________________
 ## Terms of Use
 This project is provided for **personal and educational purposes only**.  
 - **No modification, redistribution, or commercial use is allowed.**  
-- If you wish to use this project for any other purpose, please contact the author for permission.
+- Any violation of these terms is strictly prohibited.
