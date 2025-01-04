@@ -17,7 +17,7 @@ apt install python
 
 git clone https://github.com/BOYARB/PXPASS
 
-cd PXPASS
+cd PXPASS/
 
 pip install -r requirements.txt
 
