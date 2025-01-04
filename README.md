@@ -23,4 +23,7 @@ pip install -r requirements.txt
 
 python pxpass.py
 _____________________________________
-##terms of use - This project is available for personal purposes only. - **No modification, redistribution or commercial use**
+## Terms of Use
+This project is provided for **personal and educational purposes only**.  
+- **No modification, redistribution, or commercial use is allowed.**  
+- If you wish to use this project for any other purpose, please contact the author for permission.
