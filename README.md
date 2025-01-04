@@ -23,4 +23,4 @@ pip install -r requirements.txt
 
 python pxpass.py
 _____________________________________
-This repository is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. Please refer to the LICENSE file for more details.
+##terms of use - This project is available for personal purposes only. - **No modification, redistribution or commercial use** -If you need special permission, please contact me.
