@@ -1,6 +1,1 @@
-This work is licensed under a Creative 
-Commons Attribution- NonCommercial-
-NoDerivatives 4.0 International License. 
-You are free to share this work, but you 
-cannot modify it, and you cannot use it 
-for commercial purposes.
+[BOYARB] 2025. All rights reserved. This project is only used FOR commercial and other purposes. **Do not modify, redistribute, or use the code in commercial projects.**
