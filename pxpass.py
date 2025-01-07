@@ -17,8 +17,8 @@ print(WHITE)
 print(pyfiglet.figlet_format('PXPASS', font="slant"))
 
 print(CYAN + "════════════════════════════════════════════════════")
-print(Fore.LIGHTBLACK_EX + " ✨* This tool was made by 'BOYARB🍷'")
-print(" ✨* The tool is open source!!")
+print(Fore.LIGHTBLACK_EX + " ✨This tool was made by 'BOYARB🍷'")
+print(" ✨The tool is open source!!")
 print(CYAN + "════════════════════════════════════════════════════")
 print(WHITE)
 
