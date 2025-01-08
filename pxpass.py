@@ -29,7 +29,7 @@ def decode_base64(encoded_message):
     try:
         return base64.b64decode(encoded_message.encode('utf-8')).decode('utf-8')
     except Exception:
-        return None  
+        return None
 
 
 def main():
@@ -40,7 +40,9 @@ def main():
         print("║                                                ║")
         print("║  2 : To decrypt text                           ║")
         print("║                                                ║")
-        print("║  3 : Exit                                      ║")
+        print("║  3 : Contact me                                ║")
+        print("║                                                ║")
+        print("║  4 : Exit                                      ║")
         print("╚════════════════════════════════════════════════╝")
         print(BLUE)
 
@@ -49,7 +51,7 @@ def main():
 
         if choice == "1":
             message = input("Enter text to encrypt it: ")
-            if not message.strip():  
+            if not message.strip():
                 print(RED + "Error: No text entered. Please enter some text to encrypt.")
             else:
                 encoded_message = encode_base64(message)
@@ -65,6 +67,12 @@ def main():
 Please check and try again.""")
 
         elif choice == "3":
+            print(WHITE + "\nConnect with me on Facebook:")
+            print(WHITE + """https://www.facebook.com/profile.php?id=100095163105482
+&mibextid=ZbWKwL""")
+            print()
+
+        elif choice == "4":
             print(RED + "Exit")
             break
 
@@ -73,4 +81,4 @@ Please check and try again.""")
 
 
 if __name__ == "__main__":
-    main()
+    main() 
