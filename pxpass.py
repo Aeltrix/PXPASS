@@ -68,8 +68,7 @@ Please check and try again.""")
 
         elif choice == "3":
             print(WHITE + "\nConnect with me on Facebook:")
-            print(WHITE + """https://www.facebook.com/profile.php?id=100095163105482
-&mibextid=ZbWKwL""")
+            print(WHITE + """https://www.facebook.com/profile.php?id=100095163105482&mibextid=ZbWKwL""")
             print()
 
         elif choice == "4":
