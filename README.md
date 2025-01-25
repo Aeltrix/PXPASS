@@ -1,4 +1,4 @@
-# PXPASS - encryption and decryption tool
+# PXPASS
 PXPASS is an open source tool that aims to provide a secure and efficient way to encrypt and decrypt texts using the popular ChaCha20 algorithm, as well as compress data using zlib to increase efficiency and reduce the size of encrypted data. The encryption process takes place in two stages: first the texts are compressed, then the compressed data is encrypted, providing high security and a small encrypted size.
 
 # Use on
