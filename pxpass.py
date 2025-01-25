@@ -1,6 +1,7 @@
 import os
 import base64
 import zlib
+import hashlib
 from Crypto.Cipher import ChaCha20
 from Crypto.Random import get_random_bytes
 from colorama import init, Fore
@@ -14,38 +15,37 @@ BLUE = "\033[1;34m"
 RED = "\033[1;31m"
 YELLOW = "\033[1;33m"
 
-
-key = get_random_bytes(32)  
+# مفتاح ثابت (سيتم توليده باستخدام SHA-256 لضمان الطول 32 بايت)
+static_key = "thisisaverystrongkey1234"  
+key = hashlib.sha256(static_key.encode()).digest()
 
 def encode_chacha_compressed(message):
-    
     compressed_message = zlib.compress(message.encode('utf-8'), level=9)
-    
-    
-    cipher = ChaCha20.new(key=key, nonce=get_random_bytes(8))
+    nonce = get_random_bytes(8)  # توليد nonce عشوائي
+    cipher = ChaCha20.new(key=key, nonce=nonce)
     encrypted_message = cipher.encrypt(compressed_message)
-    
-    
-    return base64.b64encode(cipher.nonce + encrypted_message).decode('utf-8')
+    return base64.b64encode(nonce + encrypted_message).decode('utf-8')
 
-def decode_chacha_compressed(encoded_message):
+def decrypt_chacha_compressed_multiple_nonces(encoded_message):
     try:
-        
         decoded_data = base64.b64decode(encoded_message)
-        
-        
-        nonce = decoded_data[:8]  
-        encrypted_message = decoded_data[8:]
-        
-        
-        cipher = ChaCha20.new(key=key, nonce=nonce)
-        decrypted_message = cipher.decrypt(encrypted_message)
-        
-        
-        return zlib.decompress(decrypted_message).decode('utf-8')
-    
+        encrypted_message = decoded_data[8:]  # استخراج النص المشفر
+        potential_nonces = [decoded_data[:8]]  # إضافة الـnonce المخزن في النص المشفر
+        potential_nonces.append(get_random_bytes(8))  # إضافة nonce عشوائي للمحاولة
+
+        # محاولة فك التشفير باستخدام nonces متعددة
+        for nonce in potential_nonces:
+            try:
+                cipher = ChaCha20.new(key=key, nonce=nonce)  # استخدام الـnonce في عملية فك التشفير
+                decrypted_message = cipher.decrypt(encrypted_message)  # فك التشفير
+                return zlib.decompress(decrypted_message).decode('utf-8')  # إذا تم فك التشفير بنجاح
+            except Exception:
+                continue  # إذا فشل فك التشفير بـnonce، نجرب الـnonce التالي
+
     except Exception:
-        return None
+        return None  # في حالة حدوث خطأ عام
+
+    return None  # إذا فشل فك التشفير بكل الـnonces
 
 def main():
     os.system('clear')
@@ -85,7 +85,7 @@ def main():
 
         elif choice == "2":
             encoded_message = input("Enter the ciphertext: ")
-            decoded_message = decode_chacha_compressed(encoded_message)
+            decoded_message = decrypt_chacha_compressed_multiple_nonces(encoded_message)
             if decoded_message:
                 print(YELLOW + f"Decrypted text: [{decoded_message}]")
             else:
