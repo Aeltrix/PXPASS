@@ -15,13 +15,13 @@ BLUE = "\033[1;34m"
 RED = "\033[1;31m"
 YELLOW = "\033[1;33m"
 
-# مفتاح ثابت (سيتم توليده باستخدام SHA-256 لضمان الطول 32 بايت)
+
 static_key = "thisisaverystrongkey1234"  
 key = hashlib.sha256(static_key.encode()).digest()
 
 def encode_chacha_compressed(message):
     compressed_message = zlib.compress(message.encode('utf-8'), level=9)
-    nonce = get_random_bytes(8)  # توليد nonce عشوائي
+    nonce = get_random_bytes(8)  
     cipher = ChaCha20.new(key=key, nonce=nonce)
     encrypted_message = cipher.encrypt(compressed_message)
     return base64.b64encode(nonce + encrypted_message).decode('utf-8')
@@ -29,23 +29,23 @@ def encode_chacha_compressed(message):
 def decrypt_chacha_compressed_multiple_nonces(encoded_message):
     try:
         decoded_data = base64.b64decode(encoded_message)
-        encrypted_message = decoded_data[8:]  # استخراج النص المشفر
-        potential_nonces = [decoded_data[:8]]  # إضافة الـnonce المخزن في النص المشفر
-        potential_nonces.append(get_random_bytes(8))  # إضافة nonce عشوائي للمحاولة
+        encrypted_message = decoded_data[8:]  
+        potential_nonces = [decoded_data[:8]]  
+        potential_nonces.append(get_random_bytes(8))  
 
-        # محاولة فك التشفير باستخدام nonces متعددة
+        
         for nonce in potential_nonces:
             try:
-                cipher = ChaCha20.new(key=key, nonce=nonce)  # استخدام الـnonce في عملية فك التشفير
-                decrypted_message = cipher.decrypt(encrypted_message)  # فك التشفير
-                return zlib.decompress(decrypted_message).decode('utf-8')  # إذا تم فك التشفير بنجاح
+                cipher = ChaCha20.new(key=key, nonce=nonce)  
+                decrypted_message = cipher.decrypt(encrypted_message)  
+                return zlib.decompress(decrypted_message).decode('utf-8')  
             except Exception:
-                continue  # إذا فشل فك التشفير بـnonce، نجرب الـnonce التالي
+                continue  
 
     except Exception:
-        return None  # في حالة حدوث خطأ عام
+        return None  
 
-    return None  # إذا فشل فك التشفير بكل الـnonces
+    return None  
 
 def main():
     os.system('clear')
