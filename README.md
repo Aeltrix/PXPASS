@@ -1,9 +1,5 @@
-# PXPASS
-What does the tool do?. A powerful 
-tool used to encrypt and decode texts
-The tool uses powerful algorithms
-High safety tool 
-The type of encryption you are using is"ChaCha20"💫. 
+# PXPASS - A tool for encrypting and decrypting texts using ChaCha20 and data compression
+PXPASS is an open source tool that aims to provide a secure and efficient way to encrypt and decrypt texts using the popular ChaCha20 algorithm, as well as compress data using zlib to increase efficiency and reduce the size of encrypted data. The encryption process takes place in two stages: first the texts are compressed, then the compressed data is encrypted, providing high security and a small encrypted size.
 
 # Use on
 1 : termux
