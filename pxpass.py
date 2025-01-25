@@ -14,34 +14,34 @@ BLUE = "\033[1;34m"
 RED = "\033[1;31m"
 YELLOW = "\033[1;33m"
 
-# Key generation for ChaCha20 (must be 32 bytes)
-key = get_random_bytes(32)  # ChaCha20 key
+
+key = get_random_bytes(32)  
 
 def encode_chacha_compressed(message):
-    # Step 1: Compress the message using zlib (strong compression)
+    
     compressed_message = zlib.compress(message.encode('utf-8'), level=9)
     
-    # Step 2: Encrypt the compressed message with ChaCha20
+    
     cipher = ChaCha20.new(key=key, nonce=get_random_bytes(8))
     encrypted_message = cipher.encrypt(compressed_message)
     
-    # Return base64 encoded result with nonce included
+    
     return base64.b64encode(cipher.nonce + encrypted_message).decode('utf-8')
 
 def decode_chacha_compressed(encoded_message):
     try:
-        # Step 1: Decode the base64
+        
         decoded_data = base64.b64decode(encoded_message)
         
-        # Extract the nonce and the encrypted message
-        nonce = decoded_data[:8]  # ChaCha20 uses an 8-byte nonce
+        
+        nonce = decoded_data[:8]  
         encrypted_message = decoded_data[8:]
         
-        # Step 2: Decrypt the message with ChaCha20
+        
         cipher = ChaCha20.new(key=key, nonce=nonce)
         decrypted_message = cipher.decrypt(encrypted_message)
         
-        # Step 3: Decompress the message using zlib
+        
         return zlib.decompress(decrypted_message).decode('utf-8')
     
     except Exception:
