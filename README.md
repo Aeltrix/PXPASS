@@ -2,7 +2,8 @@
 What does the tool do?. A powerful 
 tool used to encrypt and decode texts
 The tool uses powerful algorithms
-High safety tool Use it liberally. 💫
+High safety tool 
+The type of encryption you are using is"ChaCha20"💫. 
 
 # Use on
 1 : termux
