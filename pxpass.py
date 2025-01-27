@@ -16,8 +16,8 @@ RED = "\033[1;31m"
 YELLOW = "\033[1;33m"
 
 
-static_key = "thisisaverystrongkey1234"  
-key = hashlib.sha256(static_key.encode()).digest()
+static_key = "keymarhapahathahwalmaftahltshferorfakaltashfer999mhmtmonboyarb"
+key = hashlib.sha256(static_key.encode()).digest()  
 
 def encode_chacha_compressed(message):
     compressed_message = zlib.compress(message.encode('utf-8'), level=9)
@@ -33,7 +33,6 @@ def decrypt_chacha_compressed_multiple_nonces(encoded_message):
         potential_nonces = [decoded_data[:8]]  
         potential_nonces.append(get_random_bytes(8))  
 
-        
         for nonce in potential_nonces:
             try:
                 cipher = ChaCha20.new(key=key, nonce=nonce)  
