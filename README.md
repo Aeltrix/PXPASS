@@ -2,7 +2,7 @@
 PXPASS is an open source tool that 
 aims to provide a secure and 
 efficient way to encrypt and decrypt 
-texts using the famous"ChaCha20" 
+texts using the famous"ChaCha20"
 algorithm. The tool is powerful.
 
 # Use on
