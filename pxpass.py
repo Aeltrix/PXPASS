@@ -87,7 +87,7 @@ Please check and try again.""")
 
         elif choice == "3":
             print(WHITE + "\nConnect with me on Facebook:")
-            print(WHITE + """https://www.facebook.com/bo.yarb.2025""")
+            print(WHITE + """https://www.facebook.com/bo.yarb.999""")
             print()
 
         elif choice == "4":
