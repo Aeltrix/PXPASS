@@ -15,7 +15,7 @@ BLUE = "\033[1;34m"
 RED = "\033[1;31m"
 YELLOW = "\033[1;33m"
 
-static_key = "keymarhapahathahwalmaftahltshferorfakaltashfer999onboyarb"
+static_key = "keymarhapahathahwalmaftahltshferorfakaltashfer999onAeltrix"
 key = hashlib.sha256(static_key.encode()).digest()  
 
 def encode_chacha_compressed(message):
