@@ -47,7 +47,7 @@ def main():
     print(pyfiglet.figlet_format('PXPASS', font="slant"))
 
     print(CYAN + "════════════════════════════════════════════════════")
-    print(Fore.LIGHTBLACK_EX + " ✨This tool was made by 'BOYARB🍷'")
+    print(Fore.LIGHTBLACK_EX + " ✨This tool was made by 'Aeltrix🍷'")
     print(" ✨The tool is open source. Strong safety force ")
     print(CYAN + "════════════════════════════════════════════════════")
     print(WHITE)
