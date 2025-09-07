@@ -19,7 +19,7 @@ apt upgrade
 
 apt install python
 
-git clone https://github.com/BOYARB/PXPASS
+git clone https://github.com/Aeltrix /PXPASS
 
 cd PXPASS/
 
