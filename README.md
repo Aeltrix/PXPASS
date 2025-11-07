@@ -10,7 +10,7 @@ algorithm. The tool is powerful.
 
 2 : Kali Linux
 
-3 : Parrot OS
+3 : Ubuntu
 
 # Installation
 apt update
