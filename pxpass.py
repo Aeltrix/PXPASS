@@ -86,8 +86,8 @@ def main():
 Please check and try again.""")
 
         elif choice == "3":
-            print(WHITE + "\nConnect with me on Facebook:")
-            print(WHITE + """https://www.facebook.com/Aeltrix.999""")
+            print(WHITE + "\nConnect with me on tiktok:")
+            print(WHITE + """@nyycrypt""")
             print()
 
         elif choice == "4":
