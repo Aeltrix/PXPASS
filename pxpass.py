@@ -61,7 +61,7 @@ def main():
         print("║                                                ║")
         print("║  3 : Contact me                                ║")
         print("║                                                ║")
-        print("║  4 : Exit                                      ║")
+        print("║  4 : exit                                      ║")
         print("╚════════════════════════════════════════════════╝")
         print(BLUE)
 
@@ -91,7 +91,7 @@ Please check and try again.""")
             print()
 
         elif choice == "4":
-            print(RED + "Exit")
+            print(RED + "exit")
             break
 
         else:
