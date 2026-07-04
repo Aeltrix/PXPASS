@@ -87,7 +87,7 @@ Please check and try again.""")
 
         elif choice == "3":
             print(WHITE + "\nConnect with me on tiktok:")
-            print(WHITE + """@nyycrypt""")
+            print(WHITE + """@hxghost_x""")
             print()
 
         elif choice == "4":
